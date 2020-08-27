@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { getInitData } from '../../actions/init'
+import './index.scss'
 
 const Homepage = () => {
   const initData = useSelector(state => state.init)
