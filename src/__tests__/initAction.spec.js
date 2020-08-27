@@ -11,21 +11,6 @@ const mockStore = configureMockStore(middlewares)
 
 jest.mock('axios')
 
-const data = [
-  {
-    id: 1,
-    body: 'Provident occaecati exc',
-    userId: 1,
-    title: 'Sunt aut facere repellat provident occaecati exc'
-  },
-  {
-    id: 2,
-    title: 'Sunt aut facere repellat',
-    body: 'Lorem impsum...',
-    userId: 1
-  }
-]
-
 describe('getInitData', () => {
   it('should call the getInitData action', async () => {
     axios.get.mockResolvedValue({ data: mockData.init })
