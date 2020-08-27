@@ -11,7 +11,7 @@ const Homepage = () => {
   }, [dispatch])
 
   return (
-    <p>Homepage</p>
+    <h3 className="title">Homepage</h3>
   )
 }
 
