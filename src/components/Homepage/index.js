@@ -10,7 +10,7 @@ const Homepage = () => {
   useEffect(() => {
     dispatch(getInitData())
   }, [dispatch])
-
+  console.log(initData)
   return (
     <h3 className="title">Homepage</h3>
   )
