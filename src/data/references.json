@@ -1,0 +1,42 @@
+[
+  {
+    "type": "Personal",
+    "sections": [
+      {
+        "title": "First name",
+        "inputType": "text",
+        "key": "first_name"
+      },
+      {
+        "title": "Last name",
+        "inputType": "text",
+        "key": "last_name"
+      },
+      {
+        "title": "Address",
+        "inputType": "text",
+        "key": "current_address"
+      }
+    ]
+  },
+  {
+    "type": "Employer",
+    "sections": [
+      {
+        "title": "Employer name",
+        "inputType": "text",
+        "key": "name"
+      },
+      {
+        "title": "Employer start date",
+        "inputType": "date",
+        "key": "start_date"
+      },
+      {
+        "title": "Employer end date",
+        "inputType": "date",
+        "key": "end_date"
+      }
+    ]
+  }
+]

@@ -2,5 +2,9 @@
   {
     "path": "/",
     "component": "Homepage"
+  },
+  {
+    "path": "/reference",
+    "component": "References"
   }
 ]

@@ -2,9 +2,11 @@ import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Layout from './components/Layout'
 import Homepage from './components/Homepage'
+import References from './components/References'
 
 const components = {
-  Homepage
+  Homepage,
+  References
 }
 
 const App = () => {
