@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import FormSection from '../FormSection'
+import FormSections from '../FormSections'
 import referencesSections from '../../data/references.json'
 import './index.scss'
 
@@ -35,7 +35,7 @@ const References = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <FormSection formSections={formSections} values={values} setValues={setValues} />
+      <FormSections formSections={formSections} values={values} setValues={setValues} />
       <div>
         <button type="button" onClick={addEmployerSection}>+</button>
       </div>
