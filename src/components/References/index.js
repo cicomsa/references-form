@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import FormSection from '../FormSection'
 import referencesSections from '../../data/references.json'
 import './index.scss'
 
@@ -26,12 +27,6 @@ const References = () => {
       .catch(e => console.log(e))
   }
 
-  const handleChange = e => {
-    const { value, name } = e.target
-
-    setValues({ ...values, [name]: value })
-  }
-
   const addEmployerSection = () => {
     const employerSection = referencesSections.find(section => section.type === 'Employer')
 
@@ -40,34 +35,11 @@ const References = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      {formSections.map(form => {
-        const { type, sections } = form
-
-        return (
-          <div key={type}>
-            <h3>{type}</h3>
-            {sections.map(section => {
-              const { title, inputType, key } = section
-              return (
-                <div className="input-wrapper" key={title}>
-                  <label htmlFor={key}>{title}</label>
-                  <input
-                    type={inputType}
-                    id={title}
-                    name={key}
-                    value={values[key] || ''}
-                    onChange={handleChange}
-                  />
-                </div>
-              )
-            })}
-          </div>
-        )
-      })}
+      <FormSection formSections={formSections} values={values} setValues={setValues} />
       <div>
         <button type="button" onClick={addEmployerSection}>+</button>
       </div>
-      <button type="button">Submit</button>
+      <button type="submit">Submit</button>
     </form>
   )
 }
