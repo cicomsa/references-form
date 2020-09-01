@@ -21,6 +21,5 @@ describe('requests', () => {
 
       await expect(requests.getInitData()).rejects.toThrow(errorMessage);
     })
-
   })
 })
