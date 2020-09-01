@@ -1,7 +1,6 @@
 import React from 'react'
 
 const FormSections = ({ formSections, values, setValues }) => {
-
   const handleChange = e => {
     const { value, name } = e.target
 
@@ -17,6 +16,7 @@ const FormSections = ({ formSections, values, setValues }) => {
           <h3>{type}</h3>
           {sections.map(section => {
             const { title, inputType, key } = section
+
             return (
               <div className="input-wrapper" key={title}>
                 <label htmlFor={key}>{title}</label>
