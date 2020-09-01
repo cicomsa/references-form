@@ -1,12 +1,7 @@
 import React from 'react'
+import Input from '../Input'
 
-const FormSections = ({ formSections, values, setValues }) => {
-  const handleChange = e => {
-    const { value, name } = e.target
-
-    setValues({ ...values, [name]: value })
-  }
-
+const FormSections = ({ formSections }) => {
   return (
     formSections.map(form => {
       const { type, sections } = form
@@ -18,16 +13,11 @@ const FormSections = ({ formSections, values, setValues }) => {
             const { title, inputType, key } = section
 
             return (
-              <div className="input-wrapper" key={title}>
-                <label htmlFor={key}>{title}</label>
-                <input
-                  type={inputType}
-                  id={title}
-                  name={key}
-                  value={values[key] || ''}
-                  onChange={handleChange}
-                />
-              </div>
+              <Input
+                title={title}
+                key={title}
+                inputType={inputType}
+              />
             )
           })}
         </div>

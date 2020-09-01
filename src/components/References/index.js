@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import FormSections from '../FormSections'
+import ReferencesContext from './Context'
 import referencesSections from '../../data/references.json'
 import './index.scss'
 
@@ -34,13 +35,19 @@ const References = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <FormSections formSections={formSections} values={values} setValues={setValues} />
-      <div>
-        <button type="button" onClick={addEmployerSection}>+</button>
-      </div>
-      <button type="submit">Submit</button>
-    </form>
+    <ReferencesContext.Provider values={{ values, setValues }} >
+      <form onSubmit={handleSubmit}>
+        <FormSections
+          formSections={formSections}
+          values={values}
+          setValues={setValues}
+        />
+        <div>
+          <button type="button" onClick={addEmployerSection}>+</button>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </ReferencesContext.Provider>
   )
 }
 
